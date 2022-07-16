@@ -12,11 +12,7 @@
 ## 💡 Dependencies
 
 ```
-@headlessui/react: 1.6.5
-@heroicons/react: 1.0.6
-framer-motion: 6.3.16
-react: 18.2.0
-react-dom: 18.2.0
+
 ```
 
 ## ❔ Questions
