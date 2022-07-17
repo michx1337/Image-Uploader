@@ -12,8 +12,8 @@ export const config = {
 export default async function api(req, res) {
  if (req.method !== "POST") {
   return res.status(405).json({
-   message: "Method not allowed",
-   error: "Method not allowed",
+   message: "Method not allowed!",
+   error: "Method not allowed!",
   });
  }
 
@@ -21,27 +21,28 @@ export default async function api(req, res) {
  form.parse(req, async function (err, fields, files) {
   if (err) {
    res.status(500).json({
-    message: "Error parsing image",
-    error: err,
+    message: "Error parsing image!",
+    error: "Error parsing image!",
    });
   }
   if (!files.file) {
    return res.status(400).json({
     message: "No file provided",
-    error: "No file provided",
+    error: "No file provided!",
    });
   }
   const ext = files.file.originalFilename.split(".").pop();
-  if (!ext || !["png", "jpg", "jpeg"].includes(ext)) {
+  if (!ext || !["png", "jpg", "jpeg", "gif"].includes(ext)) {
    return res.status(400).json({
-    message: "Invalid file extension",
-    error: "Invalid file extension",
+    message: "Invalid file extension!",
+    error: "Invalid file extension!",
    });
   }
-  await saveFile(files.file);
-  return res.status(201).json({
-   message: "File uploaded successfully",
-   error: null,
+  await saveFile(files.file).then((id) => {
+   return res.status(201).json({
+    message: id + "." + ext,
+    error: null,
+   });
   });
  });
 }
@@ -57,5 +58,5 @@ const saveFile = async (file) => {
  fs.writeFileSync(`${process.cwd()}/public/${id}.${ext || "png"}`, data); // remove this if you use md5
  //fs.writeFileSync(`${process.cwd()}/public/${hex}.${ext || "png"}`, data);
  await fs.unlinkSync(file.filepath);
- return;
+ return id;
 };

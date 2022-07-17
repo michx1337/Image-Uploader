@@ -1,6 +1,7 @@
+import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion, useReducedMotion } from "framer-motion";
-import Head from "next/head";
 
 export function Container(props) {
  const { children, ...customMeta } = props;
@@ -35,7 +36,7 @@ export function Container(props) {
     <title>Image Upload</title>
    </Head>
    <main className="flex flex-col justify-center overflow-hidden bg-[#101827] antialiased">
-    <img src="https://tailwindcss.com/_next/static/media/hero-dark@90.a7a063e8f9d179fbd72b0b735c5797b7.jpg" alt="Background" className="fixed z-10 h-full w-full max-w-none blur-3xl" width="1308" />
+    <Image src="/source/background.jpg" loading="lazy" alt="Background" className="fixed z-10 h-full w-full max-w-none blur-3xl" layout="fill" />
     <motion.div {...variants} className="z-20">
      {children}
     </motion.div>
