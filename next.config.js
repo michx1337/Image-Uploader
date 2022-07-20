@@ -4,7 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
- reactStrictMode: true,
+ reactStrictMode: false,
  pageExtensions: ["mdx", "md", "jsx", "js"],
  poweredByHeader: false,
  trailingSlash: false,
@@ -15,15 +15,8 @@ module.exports = {
   domains: [
    "cdn.discordapp.com", // Discord
    "media.discordapp.net", // Discord
+   "*.githubusercontent.com", // GitHub
   ],
- },
- async headers() {
-  return [
-   {
-    source: "/(.*)",
-    headers: securityHeaders,
-   },
-  ];
  },
  webpack: (config, { isServer, dev, config: { distDir } }) => {
   if (!isServer && !dev) {

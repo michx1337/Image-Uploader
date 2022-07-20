@@ -13,17 +13,24 @@ export const authOptions = {
   strategy: "jwt",
   maxAge: 30 * 24 * 60 * 60, // 30 days
  },
+ pages: {
+  signIn: "/auth/signin",
+ },
  secret: process.env.SECRET,
  theme: {
   colorScheme: "auto", // "auto" | "dark" | "light"
   brandColor: "#111927",
   buttonText: "#000000",
  },
+ jwt: {
+  maxAge: 60 * 60 * 24 * 30,
+ },
  callbacks: {
   async jwt({ token }) {
-   return token;
-  },
+   return token
+ }
  },
+ debug: true,
 };
 
 export default NextAuth(authOptions);

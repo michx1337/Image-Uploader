@@ -1,12 +1,11 @@
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import { AnimatePresence, MotionConfig } from "framer-motion";
-import { Router } from "next/router";
 import "@styles/globals.css";
 
-export default function App({ Component, pageProps, router }) {
+export default function App({Component, pageProps: { session, ...pageProps }, router}) {
  return (
-  <SessionProvider session={pageProps.session} refetchInterval={0}>
+  <SessionProvider session={session} refetchInterval={5 * 60} refetchOnWindowFocus={true}>
    <ThemeProvider attribute="class" themes={["light", "dark"]} defaultTheme="system">
     <MotionConfig reducedMotion="user">
      <AnimatePresence exitBeforeEnter>

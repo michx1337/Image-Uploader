@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export default function Page404() {
  const router = useRouter();
  //useEffect(() => {
-//  router.replace("/");
-// });
+ //  router.replace("/");
+ // });
  return null;
 }

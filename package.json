@@ -40,6 +40,8 @@
     "sharp": "^0.30.7"
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.218",
     "autoprefixer": "^10.4.7",
     "compression-webpack-plugin": "^10.0.0",
     "eslint": "^8.19.0",
