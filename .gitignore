@@ -1,7 +1,8 @@
- 
 .swc
 .next
 node_modules
 public/*.png
 public/*.jpg
 public/*.gif
+
+.env

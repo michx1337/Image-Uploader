@@ -5,14 +5,15 @@ import GithubProvider from "next-auth/providers/github";
 export const authOptions = {
  providers: [
   GithubProvider({
-   clientId: "Iv1.2c781e357dc3bbb3",
-   clientSecret: "c874c657105854bc5303d37a38b4079d960aa087",
+   clientId: process.env.GITHUB_CLIENT_ID,
+   clientSecret: process.env.GITHUB_CLIENT_SECRET,
   }),
  ],
  session: {
   strategy: "jwt",
   maxAge: 30 * 24 * 60 * 60, // 30 days
  },
+ secret: process.env.SECRET,
  theme: {
   colorScheme: "auto", // "auto" | "dark" | "light"
   brandColor: "#111927",
@@ -20,7 +21,6 @@ export const authOptions = {
  },
  callbacks: {
   async jwt({ token }) {
-   token.userRole = "admin";
    return token;
   },
  },

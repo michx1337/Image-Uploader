@@ -1,6 +1,7 @@
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import { AnimatePresence, MotionConfig } from "framer-motion";
+import { Router } from "next/router";
 import "@styles/globals.css";
 
 export default function App({ Component, pageProps, router }) {

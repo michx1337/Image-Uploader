@@ -35,10 +35,19 @@ export function Container(props) {
    <Head>
     <title>Image Upload</title>
    </Head>
-   <main className="flex flex-col justify-center overflow-hidden bg-[#101827] antialiased">
+   <main className="flex flex-col justify-center overflow-hidden bg-[#101827] antialiased h-screen items-center">
     <Image src="/source/background.jpg" loading="lazy" alt="Background" className="fixed z-10 h-full w-full max-w-none blur-3xl" layout="fill" />
     <motion.div {...variants} className="z-20">
+    <div className="gap-6 rounded-md border border-slate-500/20 bg-slate-900/70 shadow-md backdrop-blur">
+    <div className="flex-none border-b border-slate-500/30">
+       <div className="flex h-8 items-center space-x-1.5 px-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-slate-600"></div>
+        <div className="h-2.5 w-2.5 rounded-full bg-slate-600"></div>
+        <div className="h-2.5 w-2.5 rounded-full bg-slate-600"></div>
+       </div>
+      </div>
      {children}
+    </div>
     </motion.div>
    </main>
   </>

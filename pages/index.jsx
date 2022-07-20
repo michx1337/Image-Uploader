@@ -2,8 +2,10 @@ import { Container } from "@components/elements/Container";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "@components/elements/Link";
 import { CopyClipboard } from "@components/elements/Clipboard";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Main(props) {
+ const { data: session } = useSession();
  const [image, setImage] = useState(null);
  const [createObjectURL, setCreateObjectURL] = useState(null);
  const [message, setMessage] = useState(null);
@@ -51,18 +53,10 @@ export default function Main(props) {
   inputRef.current.value = "";
  };
 
+if(session) {
  return (
   <>
    <Container>
-    <div className="flex h-screen flex-col items-center justify-center">
-     <div className="gap-6 rounded-md border border-slate-500/20 bg-slate-900/70 shadow-md backdrop-blur">
-      <div className="flex-none border-b border-slate-500/30">
-       <div className="flex h-8 items-center space-x-1.5 px-3">
-        <div className="h-2.5 w-2.5 rounded-full bg-slate-600"></div>
-        <div className="h-2.5 w-2.5 rounded-full bg-slate-600"></div>
-        <div className="h-2.5 w-2.5 rounded-full bg-slate-600"></div>
-       </div>
-      </div>
       <div className="p-8">
        <h1 className="pb-5 font-poppins text-5xl">{title}</h1>
        <div>
@@ -104,9 +98,21 @@ export default function Main(props) {
         </div>
        </div>
       </div>
-     </div>
-    </div>
    </Container>
   </>
  );
+ } else {
+  return (
+   <>
+    <Container>
+       <div className="p-8">
+        <h1 className="pb-5 font-poppins text-5xl">Signin with Github</h1>
+        <button onClick={() => signIn()} className={`mx-4 ml-auto mt-6 cursor-pointer rounded-md border-0 bg-[#2869FF] py-2 px-4 text-sm font-semibold text-white duration-200 hover:bg-[#2355c8]`}>
+         Signin with Github
+        </button>
+       </div>
+    </Container>
+   </>
+  );
+ }
 }
