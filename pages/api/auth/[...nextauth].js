@@ -1,12 +1,13 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import { credentials } from "@/config";
 
 // https://next-auth.js.org/configuration/options
 export const authOptions = {
  providers: [
   GithubProvider({
-   clientId: process.env.GITHUB_CLIENT_ID,
-   clientSecret: process.env.GITHUB_CLIENT_SECRET,
+   clientId: credentials.clientId,
+   clientSecret: credentials.clientSecret,
   }),
  ],
  session: {
@@ -16,7 +17,7 @@ export const authOptions = {
  pages: {
   signIn: "/auth/signin",
  },
- secret: process.env.SECRET,
+ secret: credentials.secret,
  theme: {
   colorScheme: "auto", // "auto" | "dark" | "light"
   brandColor: "#111927",
@@ -30,7 +31,6 @@ export const authOptions = {
    return token
  }
  },
- debug: true,
 };
 
 export default NextAuth(authOptions);
