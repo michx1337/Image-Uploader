@@ -5,8 +5,7 @@ export default function Document({ props }) {
   <Html lang="en">
    <Head>
     <meta name="robots" content="follow, index" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/source/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
    </Head>
