@@ -2,6 +2,8 @@
 import { nanoid } from "nanoid";
 import formidable from "formidable";
 import fs from "fs";
+import { unstable_getServerSession } from "next-auth/next"
+import { authOptions } from "../api/auth/[...nextauth].js";
 
 export const config = {
  api: {
@@ -11,6 +13,13 @@ export const config = {
 
 export default async function api(req, res) {
  try {
+ const session = await unstable_getServerSession(req, res, authOptions)
+ if (!session) {
+  return res.status(401).json({
+   message: "Unauthorized",
+   error: "Unauthorized",
+   })
+ }
   if (req.method !== "POST") {
    return res.status(405).json({
     message: "Method not allowed!",
