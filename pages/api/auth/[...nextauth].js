@@ -28,8 +28,8 @@ export const authOptions = {
  },
  callbacks: {
   async jwt({ token }) {
-   return token
- }
+   return token;
+  },
  },
 };
 

@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Page404() {
- const router = useRouter()
+ const router = useRouter();
  useEffect(() => {
-   router.push("/")
- })
- return null
+  router.push("/");
+ });
+ return null;
  return null;
 }
