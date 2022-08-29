@@ -12,6 +12,11 @@
 - Run `npm run start` to see development version or `npm run build` | `npm run deploy` to build the app or deploy it to the server
 - Visit https://localhost:3000 to see the app
 
+## ⭐ How to set up the Github OAuth
+
+go to https://github.com/settings/developers
+
+
 
 ## 💻 Hosting To Use
 
