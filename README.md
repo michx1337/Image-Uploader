@@ -14,7 +14,9 @@
 
 ## ⭐ How to set up the Github OAuth
 
-go to https://github.com/settings/developers
+- Go to https://github.com/settings/developers
+- Click OAuth Apps
+
 
 
 
