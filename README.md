@@ -16,6 +16,7 @@
 
 - Go to https://github.com/settings/developers
 - Click OAuth Apps
+- Make it or whatever and add the client id and the client secret
 
 
 
