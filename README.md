@@ -15,6 +15,9 @@
 
 ## 💻 Hosting To Use
 
+- replit.com
+- anything that works with react.js
+
 
 ## 💡 Dependencies
 
@@ -31,5 +34,6 @@
 
 ## ❔ Questions
 
+- there is no datebase added.
 > **You can always visit my profile on [Github](https://github.com/michx1337)**<br> There you will find a lot of up-to-date links to contact me, I always help <3 <br>
 > dm michx#1337 on discord if you need help setting it up
