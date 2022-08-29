@@ -12,11 +12,15 @@
 - Run `npm run start` to see development version or `npm run build` | `npm run deploy` to build the app or deploy it to the server
 - Visit https://localhost:3000 to see the app
 
-## ⭐ How to set up the Github OAuth
+## ⭐ How to set up the .env
 
 - Go to https://github.com/settings/developers
 - Click OAuth Apps
 - Make it or whatever and add the client id and the client secret
+- Go to .env and change it.
+- For secret put it anything you want
+- For the auth, put it to your domain.
+- Done
 
 
 
