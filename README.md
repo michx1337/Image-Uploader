@@ -1,6 +1,7 @@
 # 🚀 Image Uploader with Next.js and Tailwind.css
 
 > **Made with ❤️ by [Igor Kowalczyk](https://github.com/igorkowalczyk) [michx](https://github.com/michx1337)**
+> **please star it.**
 
 ## 🔩 Usage
 
@@ -27,3 +28,4 @@
 ## ❔ Questions
 
 > **You can always visit my profile on [Github](https://github.com/michx1337)**<br> There you will find a lot of up-to-date links to contact me, I always help <3
+> **dm michx#1337 on discord if you need help setting it up**
