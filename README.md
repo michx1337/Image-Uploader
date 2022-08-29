@@ -1,6 +1,6 @@
 # 🚀 Image Uploader with Next.js and Tailwind.css
 
-> **Made with ❤️ by [Igor Kowalczyk](https://github.com/igorkowalczyk) [michx](https://github.com/michx1337)**
+> **Made with ❤️ by [Igor Kowalczyk](https://github.com/igorkowalczyk) | [michx](https://github.com/michx1337)**
 > **please star it.**
 
 ## 🔩 Usage
