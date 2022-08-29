@@ -19,8 +19,8 @@
 - Make it or whatever and add the client id and the client secret
 - Go to .env and change it.
 - For secret put it anything you want
-- For the auth, put it to your domain.
-- Done
+- For the NextAuth_URL, put it to your domain.
+- Done!!
 
 
 
