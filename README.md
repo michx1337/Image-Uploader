@@ -47,4 +47,4 @@
 ## ❔ Questions
 
 > **there is no datebase added**. <br>
-> **dm michx#1337 on discord if you need help setting it up**
+> **dm heal#1337 on discord if you need help setting it up**
