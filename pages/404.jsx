@@ -7,5 +7,4 @@ export default function Page404() {
   router.push("/");
  });
  return null;
- return null;
 }
