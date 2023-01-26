@@ -1,7 +1,5 @@
-//import crypto from 'crypto';
 import { nanoid } from "nanoid";
 import formidable from "formidable";
-import fs from "fs";
 
 export const config = {
  api: {
@@ -39,12 +37,29 @@ export default async function api(req, res) {
      error: "Invalid file extension!",
     });
    }
-   await saveFile(files.file).then((id) => {
-    return res.status(201).json({
-     message: id + "." + ext,
-     error: null,
+
+   const id = nanoid(10);
+   const fileName = `${id}.${ext}`;
+   fetch(`https://storage.bunnycdn.com/${process.env.IMAGE_STORE}/${process.env.IMAGE_STORE}/${fileName}`, {
+    method: "PUT",
+    headers: {
+     AccessKey: `${process.env.API_KEY}`,
+     "content-type": "application/octet-stream",
+    },
+   })
+    .then((res) => res.json())
+    .then((json) => {
+     return res.status(200).json({
+      message: fileName,
+      data: json,
+     });
+    })
+    .catch((err) => {
+     return res.status(500).json({
+      message: "Error uploading image!",
+      error: "Error uploading image!",
+     });
     });
-   });
   });
  } catch (error) {
   return res.status(500).json({
@@ -53,17 +68,3 @@ export default async function api(req, res) {
   });
  }
 }
-
-// uncomment commented lines to change link length
-const saveFile = async (file) => {
- const data = fs.readFileSync(file.filepath);
- const ext = file.originalFilename.split(".").pop();
- const id = nanoid(15); // remove this if you use md5
- //const hashSum = crypto.createHash('md5');
- //hashSum.update(data);
- //const hex = hashSum.digest('hex');
- fs.writeFileSync(`${process.cwd()}/public/${id}.${ext || "png"}`, data); // remove this if you use md5
- //fs.writeFileSync(`${process.cwd()}/public/${hex}.${ext || "png"}`, data);
- await fs.unlinkSync(file.filepath);
- return id;
-};

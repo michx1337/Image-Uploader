@@ -5,27 +5,23 @@
 ## 🔩 Usage
 
 - Run `npm install` to install all packages
+- Fill the .env file with your data (example file: `.env.example`)
 - Run `npm run start` to see development version or `npm run build` | `npm run deploy` to build the app or deploy it to the server
 - Visit https://localhost:3000 to see the app
 
 ## ⭐ How to set up the .env
 
-- Go to https://github.com/settings/developers
-- Click OAuth Apps
-- Make it or whatever and add the client id and the client secret
-- Go to .env and change it.
-- For secret put it anything you want
-- For the NextAuth_URL, put it to your domain.
-- Done!!
-
-
-
+- Go to https://bunnycdn.com
+- Create an account
+- Create a storage zone
+- Copy the storage zone name & API key
+- Paste them into the .env file
 
 ## 💻 Hosting To Use
 
-- Replit.com
-- anything that works with react.js and next.js
-
+- Vercel
+- Repl.it
+- Any other hosting that supports Node.js
 
 ## 💡 Dependencies
 
@@ -41,5 +37,4 @@
 
 ## ❔ Info
 
-> **There is no datebase added and even needed**. <br>
-> **DM `heal#1337` on discord if you need help with setting this project**
+> **There is no datebase added and even needed**. <br> > **DM `heal#1337` on discord if you need help with setting this project**
